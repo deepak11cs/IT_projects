@@ -28,6 +28,7 @@ public class PatternServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //super.service(req, resp);
         int i=0;
+        flag=true;
         out=resp.getWriter();
         try{
             i=Integer.parseInt(req.getParameter("num"));
