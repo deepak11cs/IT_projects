@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title> HANDS ON EXERCISE </title>
+    </head>
+    <body>
+        <form action="hands_on.html" method="get">
+            <b> INFONET SERVICES </b> <BR><br>
+        <input type="text" id="t1" name="n1"/>  First Name <br><br>
+        <input type="text" id="t2" name="n2"/>  Last Name <br><br>
+        <input type="text" id="t3" name="n3"/>  E-mail Address <br><br>
+        <input type="text" id="t4" name="n4"/>  Address <br><br>
+        <input type="text" id="t5" name="n5"/>  City <br><br>
+        <input type="text" id="t6" name="n6"/>  State <br><br>
+        <input type="text" id="t7" name="n7"/>  Postal code <br><br>
+        <input type="text" id="t8" name="n8"/>  Country <br><br>
+
+        <b>PLEASE CHOOSE THE MOST APPROPRIATE STATEMENTS</b><br><BR>
+        <input type="radio" name="n9" value="v1" />  I regularly purchase items online <br><br>
+        <input type="radio" name="n9" value="v2" />  I have on occasion purchased items online <br><br>
+        <input type="radio" name="n9" value="v3" />  I have not purchase anything online,but i would consider it <br><br>
+        <input type="radio" name="n9" value="v4" />  I prefer to shop in real stores <br><br>
+
+        <b>I'M INTERESTED IN (choose all that apply)</b><br><br>
+                <input type="checkbox" name="n10" value="v5" />  HIKING <br><br>
+                <input type="checkbox" name="n11" value="v6" />  MOUNTAIN BIKING <br><br>
+                <input type="checkbox" name="n12" value="v7" />  CAMPING <br><br>
+                <input type="checkbox" name="n13" value="v8" />  ROCK CLIMBING <br><br>
+                <input type="checkbox" name="n14" value="v9" />  OFF-ROAD 4WD <br><br>
+                <input type="checkbox" name="n15" value="v10" />  CROSS-COUNTRY SKIING <br><br>
+                
+                <B>I LEARNED ABOUT THIS SITE FROM </B><BR><BR>
+                <SELECT name="n16">
+                    <option value="v11">print ads</option>
+                    <option value="v12">friends</option>
+                    <option value="v13">others</option>
+                </SELECT>
+                <br><br>
+                
+                <b>COMMENTS</b><br><br>
+                <textarea rows="10" cols="80" name="n17" >please type any comments here</textarea> 
+                
+                <br><br>
+                <input type="submit" onclick="start()" />
+        </form>
+        <form action="hands_on.html" method="get">
+                <input type="submit" value="Start Over" /> 
+        </form>
+     
+        <script type="text/javascript">
+            function start()
+            {    
+               if(  document.getElementById("t1").value=="")
+                   alert("enter first name");
+                 else if (document.getElementById("t2").value=="")
+                     alert("enter last name");
+               else if( document.getElementById("t3").value=="")
+                   alert("enter e-mail");
+                 else if (document.getElementById("t4").value=="")
+                     alert("enter address");
+                 else if (document.getElementById("t5").value=="")
+                     alert("enter city");
+                 else if (document.getElementById("t6").value=="")
+                 alert("enter state");
+                  else if (document.getElementById("t7").value=="")
+                      alert("enter postal code" );
+                 else if (document.getElementById("t8").value=="")
+                     alert("enter country");
+               
+                 var r=document.getElementsByName("n9");                                  //radio buttons
+                 var c=0;
+                 for(var i=0;i<r.length;i++)
+                 {
+                     if(r[i].checked==true)
+                     {
+                         c++;
+                         break;
+                     }
+                 }
+                 if(c==0)
+                     alert("please select appropriate options");
+                 
+               //  var check=
+               var x1=document.getElementsByName("n10");
+               var x2=document.getElementsByName("n11");
+               var x3=document.getElementsByName("n12");
+               var x4=document.getElementsByName("n13");
+               var x5=document.getElementsByName("n14");
+               var x6=document.getElementsByName("n15");
+               
+               
+                 if (x1.checked=="false" && x2.checked=="false" && x3.checked=="false"  && x4.checked=="false" && x5.checked=="false" &&x6.checked=="false")                                                                          
+                       alert("please apply for options");                                                    
+                 
+                 
+                 else if (document.getElementsByName("n16").value==="")
+                     alert("plz fill the details about how do u learned about this site");
+                 else if(document.getElementsByName("n17").value==="")
+                     alert("plz mention comments");
+               
+            
+            }
+            </script>
+        
+        
+        
+    </body>
+</html>

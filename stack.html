@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>stack implementation</title>
+	<script type="text/javascript">
+		var arr=new Array();
+	</script>
+</head>
+<body>
+
+	<form action="stack.html" method="POST">
+		<textarea id="st" name="stackstatus" placeholder="stack empty" readonly="readonly" ></textarea><br/>
+		<input type="button" name="pushitem" id="push" onclick="push1()" value="push"/>
+		<input type="button" name="popitem" id="pop" onclick="pop1()" value="pop"/>
+	</form>
+	<script type="text/javascript">
+		function push1(){
+			var a=prompt("element to push : ");
+			
+			arr.push(a);
+			document.getElementById("st").value=arr;
+		}
+		function pop1(){
+			arr.pop();
+			document.getElementById("st").value=arr;
+		}
+	</script>
+
+</body>
+</html>

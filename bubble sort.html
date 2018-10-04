@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bubble sort</title>
+</head>
+<body>
+	<form action="bubble sort.html" method="POST">
+		<input type="text" name="array" id="arr" required="required" />
+		<input type="button" name="sort" value="sort" onclick="sub()" />
+		<input type="text" id="sarr" name="sortedarray" style="display:none" />
+		<input type="reset" name="reset" onclick="res()" />
+	</form>
+	<script type="text/javascript">
+		function sub(){
+			if(document.getElementById("arr").value !=""){
+				var a=new Array();
+				a=document.getElementById("arr").value.split(" ");
+				for(var i=0;i<a.length;++i){
+					if(isNaN(a[i])){
+						alert("enter a valid array ");
+						break;
+					}
+					else{
+						a[i]=parseInt(a[i]);
+					}
+				}
+				for(var i=0;i<a.length;++i){
+					for(var j=0;j<a.length-i-1;++j){
+						if(a[j]>a[j+1]){
+							var temp=a[j];
+							a[j]=a[j+1];
+							a[j+1]=temp;
+						}
+					}
+				}
+				document.getElementById("sarr").style.display="block";
+				document.getElementById("sarr").value=a;
+			}
+		}
+		function res(){
+			document.getElementById("sarr").style.display="none";
+		}
+	</script>
+</body>
+</html>
