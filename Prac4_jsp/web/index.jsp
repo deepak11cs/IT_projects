@@ -5,10 +5,9 @@
 --%>
 
 
-<%@page import="org.apache.tomcat.jni.Time"%>
-<%@page import="java.util.Date"%>
-<%@page import="java.text.SimpleDateFormat"%>
+<%@taglib prefix="a" uri="/WEB-INF/tlds/mygreettag.tld" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,25 +15,22 @@
         <title>Hello</title>
     </head>
     <body>
+        <form action="index.jsp">
+            <input name="name" type="text" required="required">
+            <input type="submit">
+        </form>
+                       
         <%
-            SimpleDateFormat formatter=new SimpleDateFormat("HH:mm:ss");
-            Date d=new Date();
-            String s=formatter.format(d);
-            //out.println(formatter.format(d));
-            String ar[]=s.split(":");
-            int h=Integer.parseInt(ar[0]);
-            if(h>=5 && h<12){
-                out.println("good morning");
+            String s=request.getParameter("name");
+            if(s!=null){
+                pageContext.setAttribute("nm",s);
             }
-            else if(h>=12 && h<17){
-                out.println("good afternoon");
-            }
-            else if(h>=17 && h<=21){
-                out.println("good evening");
-            }
-            else{
-                out.println("good night");
-            }
+           
         %>
+        <c:if test="${nm!=null}">
+            <a:uname name="${nm}"/>
+        </c:if>
+        
+
     </body>
 </html>
