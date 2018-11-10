@@ -19,6 +19,42 @@ public class MultipleAccountManager {
         arrayList=new ArrayList<>();
     }
 
+    public float getTotalBalance(){
+        float balance=0;
+        for(int i=0;i<arrayList.size();++i){
+            balance+=arrayList.get(i).getBalance();
+        }
+        return balance;
+    }
+    public void getMaxMin(){
+        if(arrayList.size()>0){
+        BankAccount max=arrayList.get(0);
+        BankAccount min=arrayList.get(0);
+        for(int i=0;i<arrayList.size();++i){
+            if(max.getBalance()<arrayList.get(i).getBalance()){
+                max=arrayList.get(i);
+            }
+            if(min.getBalance()>arrayList.get(i).getBalance()){
+                min=arrayList.get(i);
+            }
+        }
+        System.out.println("maximum balance : "+max.getaccountno()+"\nminimum balance : "+min.getaccountno());
+    
+        }
+        else{
+            System.out.println("no account found");
+    
+        }
+    }
+    public void getCount(float a){
+        int c=0;
+        for(int i=0;i<arrayList.size();++i){
+            if(arrayList.get(i).getBalance()>=a){
+                c++;
+            }
+        }
+        System.out.println("no. of accounts : "+c);
+    }
     public void getAccountDetails(String acc){
         for(int i=0;i<arrayList.size();i++){
             if(arrayList.get(i).getaccountno().equals(acc)){

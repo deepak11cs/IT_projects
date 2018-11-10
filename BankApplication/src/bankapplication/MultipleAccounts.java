@@ -20,7 +20,7 @@ public class MultipleAccounts {
         char ch;
         Scanner sc;
         do{
-            System.out.println("a.add account\nb.deposit amount\nc.withdraw amount\nd.find account by name\ne.account status\nf.display all accounts\npress anything else to exit");
+            System.out.println("a.add account\nb.deposit amount\nc.withdraw amount\nd.find account by name\ne.account status\nf.display all accounts\ng. total balance in bank\nh. max and min balance accounts\ni. no of accounts with atleast specific balance\npress anything else to exit");
             scan=new Scanner(System.in);
             ch=scan.nextLine().charAt(0);
             switch(ch){
@@ -68,6 +68,18 @@ public class MultipleAccounts {
                 case 'f':
                         
                     manager.displayAll();
+                    break;
+                case 'g':
+                    System.out.println("Total balance : "+manager.getTotalBalance());
+                    break;
+                case 'h':
+                    manager.getMaxMin();
+                    break;
+                case 'i':
+                    System.out.println("Enter the amount : ");
+                    sc=new Scanner(System.in);
+                    amt = sc.nextFloat();
+                    manager.getCount(amt);
                     break;
                 default:
                     ch='n';

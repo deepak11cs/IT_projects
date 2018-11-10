@@ -4,7 +4,7 @@
   <jspversion>1.2</jspversion>
   <tag>
       <name>reverse</name>
-      <body-content>empty</body-content>
+      <body-content>scriptless</body-content>
       <tag-class>com.Reverse</tag-class>
       <attribute>
           <name>input</name>
